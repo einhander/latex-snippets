@@ -1,0 +1,155 @@
+%==============один рисунок=====================
+\begin{figure}[h]
+	\center{\includegraphics[width=0.7\linewidth]{skt}}
+	\caption{Схема цепи аппаратов производства активных углей типа СКТ \\
+1-расходный бункер}
+	\label{ris:skt}
+\end{figure}
+%options page=xx, angle=xx, keepaspectratio
+%trim option's parameter order: left bottom right top
+%\includegraphics[width=\columnwidth,page=11,clip=true,trim= 10cm 3.5cm 5cm 10cm]{Pinibriket-CFN.pdf}
+%=================================================
+
+%=========Включение PDF несколько страниц==========
+\usepackage[final]{pdfpages}
+
+	\includepdf[pages={4,5},landscape,pagecommand={
+					\thispagestyle{plain},
+					\label{ris:ris1} 
+					},templatesize={180mm}{160mm},angle=270]{bio-diesel}
+%==================================================		
+		
+
+
+%два рисунка с одной подписью и буквами
+\begin{figure}[h]
+	\begin{minipage}[h]{0.49\linewidth}
+		\center{\includegraphics[width=0.5\linewidth]{image} \\ а)}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[h]{0.49\linewidth}
+		\center{\includegraphics[width=0.5\linewidth]{image} \\ б)}
+	\end{minipage}
+	\caption{Зависимость сигнала от шума для данных.}
+	\label{ris:image1}
+\end{figure} 
+
+%А теперь Чччеттыыырре!
+
+\begin{figure}[H]
+	\begin{minipage}[h]{0.47\linewidth}
+		\center{\includegraphics[width=1\linewidth]{image}} a) \\
+	\end{minipage}
+	\hfill
+	\begin{minipage}[h]{0.47\linewidth}
+		\center{\includegraphics[width=1\linewidth]{image}} \\b)
+	\end{minipage}
+	\vfill
+	\begin{minipage}[h]{0.47\linewidth}
+		\center{\includegraphics[width=1\linewidth]{image}} c) \\
+	\end{minipage}
+	\hfill
+	\begin{minipage}[h]{0.47\linewidth}
+		\center{\includegraphics[width=1\linewidth]{image}} d) \\
+	\end{minipage}
+	\caption{Correlation signal peaks: a) numerical experiment, b)
+		registered correlation signals, c) intensity distribution of correlation
+		signals in numerical experiment, d) correlation signals intensity
+		distribution for DCRAW processed data.}
+	\label{ris:experimentalcorrelationsignals}
+\end{figure}
+
+% два с разными подписями
+\begin{figure}[h]
+	\begin{center}
+		\begin{minipage}[t]{0.4\linewidth}
+			\includegraphics[width=1\linewidth]{image}
+			\caption{Исходное изображение.} %% подпись к рисунку
+			\label{ris:experimoriginal} %% метка рисунка для ссылки на него
+		\end{minipage}
+		\hfill 
+		\begin{minipage}[t]{0.4\linewidth}
+			\includegraphics[width=1\linewidth]{image}
+			\caption{Закодированное изображение.}
+			\label{ris:experimcoded}
+		\end{minipage}
+	\end{center}
+\end{figure}
+
+%три рисука с буквами и на каждый можно ссылаться и одной подписью
+%в преамболу
+\usepackage{subfigure}
+
+%и далее вставляем этот код: 
+
+\begin{figure}[ht!]  
+	\vspace{-4ex} \centering \subfigure[]{
+		\includegraphics[width=0.25\linewidth]{actuatorscouplingSheme_decoupledcase.eps} \label{fig:actuatorscouplingSheme_decoupledcase} }  
+	\hspace{4ex}
+	\subfigure[]{
+		\includegraphics[width=0.25\linewidth]{actuatorscouplingSheme_nearestcoupledcase.eps} \label{fig:actuatorscouplingSheme_nearestcoupledcase} }
+	\hspace{4ex}
+	\subfigure[]{ \includegraphics[width=0.24\linewidth]{actuatorscouplingSheme_nearestcoupled_and_diag_case.eps} \label{fig:actuatorscouplingSheme_nearestcoupled_and_diag_case} }  
+	\caption{Coupling cases for the DM models: \subref{fig:actuatorscouplingSheme_decoupledcase} decoupled case; \subref{fig:actuatorscouplingSheme_nearestcoupledcase} coupling between the closest neighbours; \subref{fig:actuatorscouplingSheme_nearestcoupled_and_diag_case} coupling between the closest neighbour and diagonally adjacent actuators.} \label{fig:threeDMcases}
+\end{figure}
+
+%Рисунок с обтеканием
+\usepackage{wrapfig}
+
+\begin{wrapfigure}[16]{R}{0.5\linewidth} 
+	\vspace{-5ex}
+	\includegraphics[width=\linewidth]{image}
+	\caption{Some caption}
+	\label{fig:somelabel}
+\end{wrapfigure}
+%Подсвеченные параметры означают:  
+%[16] - определяет высоту рисунка в число строк текста и позволяет отбить дополнительное место для рисунков.  
+%{r} - положение картинки на странице, можно слева {l} или справа {r}, R или L не позволят рисунку зайти за границу страницы
+%I и O - ближе к переплету или дальше для двух-страничного документа
+%{0.5\linewidth} - ширина картинки в относительных единицах от ширины линии.
+%Тонкий момент: на самом деле, параметр положения рисунка на странице можно писать с маленькой буквы (слева {l} или справа {r}), но это заставляет ЛаТеХ поместить изображение именно там, где вы прикажете. Если же ставить большие буквы (слева {L} или справа {R}), то это даст больше свободы ЛаТеХу.
+%Ещё тонкость в том, что автоматика может сделать слишком много (или мало) места в верхней или нижней части обтекаемого рисунка. Вот тут нам поможет дополнительный аргумент [lineheight], который в данном примере задан как [16]. Он-то определяет высоту рисунка в строках текста. Другой возможностью является добавление или удаления промежутков с помощью команды \vspace и данном примере \vspace{-5ex} ЛаТеХу приказывается сместить картинку немного вверх, чтобы выиграть место для текста. 
+
+% Фильмы
+\movie[width=\textwidth,height=0.5625\textheight]{\hspace{0.3\textwidth}\includegraphics[width=0.25\columnwidth]{play}}{images/extruder.mp4}
+
+% Рисунок на отдельной странице при заполнении предыдущей
+\afterpage{%
+	\clearpage% Flush earlier floats (otherwise order might not be correct)
+	\begin{landscape}
+		\begin{figure}[b]
+			\center{\includegraphics[width=\linewidth]{skt}}
+			\caption[Схема цепи аппаратов производства активных углей типа СКТ.]{Схема цепи аппаратов производства активных углей типа СКТ.\\
+				1 --- расходный бункер; 2 --- валковая дробилка; 3 --- молотковая дробилка; 4 --- тарельчатый питатель; 5 --- вибрационный грохот; 6;9 --- бункерные весы; 7 --- смеситель; 8 --- бак приготовления раствора K\textsubscript{2}S; 10 --- вертикальный пресс; 11;18 --- сушильный барабан; 12 --- секторный питатель; 13 --- печь карбонизации; 14 --- печь активации; 15 --- барабан охлаждения; 16 --- узел выщелачивания; 17 --- узел кислотной отмывки; 19 --- прокалочная печь; 20 --- сборник АУ.}
+			\label{ris:skt}
+		\end{figure} 
+	\end{landscape}
+}
+
+%======================  вставка pdf  ==================
+\includepdf[pages=1,
+    noautoscale=false,
+    scale=1.093,
+    pagecommand={
+        \thispagestyle{plain}
+        \section*{Приложение 1 Протоколы исследований}
+        \label{ris:ris1}  
+},templatesize={210mm}{297mm}]{moisture.pdf}
+\includepdf[pages=2-,
+    noautoscale=false,
+    scale=1.093,
+    pagecommand={
+        \thispagestyle{plain}
+        %\section{Приложение}
+        \label{ris:ris1}  
+},templatesize={210mm}{297mm}]{moisture.pdf}
+
+\includepdf[pages=-,
+    noautoscale=false,
+    scale=1.093,
+    pagecommand={
+        \thispagestyle{plain}
+        %\section{Приложение}
+        \label{ris:ris1}  
+},templatesize={210mm}{297mm}]{ash.pdf}
+

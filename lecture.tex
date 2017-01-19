@@ -1,0 +1,302 @@
+\documentclass[pdf,hyperref={unicode}]{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,amsfonts,amsmath,mathtext,textcomp}
+\usepackage{cite,enumerate,float,indentfirst,pgf}
+
+
+%\usepackage{pdfcomment} %коментарии в pdf
+%\usepackage{nemonotes} % заметки в pdf
+%\usepackage[dvips]{graphicx}
+\usepackage{hyperref} %красивые ссылки и параметры pdf
+\hypersetup{colorlinks=true,
+		pdfpagemode={FullScreen},
+		linkcolor=blue,
+		citecolor=blue,
+		filecolor=blue,
+		urlcolor=blue,
+		pdfauthor=Андрей Спицын,
+		pdfsubject=Пиролиз древесины, 
+		pdfkeywords={Пиролиз,Pyrolisys,adsorbtion}
+		} %параметры ссылок и документа
+\usepackage{graphicx} %хотим вставлять в рисунки?
+%\usepackage[dvips]{graphicx}
+\graphicspath{{images/}}%путь к рисункам
+\setbeamercovered{highly dynamic} %оверлеиы transparent= dynamic highly dynamic
+
+
+
+%создаем специальный блок другого цвета
+\newenvironment<>{problock}[1]{%
+  \begin{actionenv}#2%
+      \def\insertblocktitle{#1}%
+      \par%
+      \mode<presentation>{%
+        \setbeamercolor{block title}{fg=white,bg=orange!20!black}
+       \setbeamercolor{block body}{fg=black,bg=olive!50}
+       \setbeamercolor{itemize item}{fg=orange!20!black}
+       \setbeamertemplate{itemize item}[triangle]
+     }%
+      \usebeamertemplate{block begin}}
+    {\par\usebeamertemplate{block end}\end{actionenv}}
+
+
+%цвет блока для всего документа
+%\setbeamercolor{block title}{fg=orange!20!black,bg=green}%bg=background, fg= foreground
+%\setbeamercolor{block body}{bg=yellow,fg=green}%bg=background, fg= foreground
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+ 
+\logo{\includegraphics[height=1cm]{lta}}
+
+\usetheme{Frankfurt} %тема
+%Хорошие темы: Frankfurt - в верху есть очень красивый прогерссбар 
+
+%\usecolortheme[overlystylish]{albatross}  %цвет внешних элементов темы
+%\usecolortheme{lily} %цвет внутренних элементов темы
+
+
+%относится к первому слайду
+\title[Лекция 8 и 9]{ВЫДЕЛЕНИЕ, СБОР И ПЕРЕРАБОТКА СУЛЬФАТНОГО МЫЛА}
+
+
+\subtitle{Рациональное использование природных ресурсов \\
+Лекции 8 и 9}
+\author[Спицын~А.~А.]{Спицын Андрей Александрович}
+\institute[СПбГЛТУ]
+{Санкт-Петербургский государственный лесотехнический университет им. С.~М.~Кирова}
+\date{\today}
+
+\begin{document}
+%%титульная страница
+\maketitle
+%% основной текст
+\section{Сульфатная варка древесины}
+\subsection{Сульфатная варка древесины}
+\begin{frame}[c]{Схема сульфатной варки древесины}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{sulphate-pulping}
+\end{frame}
+
+\begin{frame}[c]{Процесс подготовки сырья}
+\transdissolve[duration=0.2]
+\begin{center}
+\begin{columns}
+       \column{0.49\textwidth}
+       \begin{itemize}
+       \item распиловка
+       \item окорка
+       \item рубка в щепу и последующая её сортировка
+       \end{itemize}
+        \column{0.49\textwidth}
+        \includegraphics[width=0.8\columnwidth]{800px-Holzhackschnitzel}
+\end{columns}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[c]{Регенерация щелока}
+\transdissolve[duration=0.2]
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{09}
+\begin{columns}
+       \column{0.4\textwidth}
+       \begin{block}{Получение зеленого щелока}
+              \begin{equation}
+              Na_2SO_4 + 4C = Na_2S + 4CO
+              \end{equation}
+              \begin{equation}
+              2NaOH + CO_2 = Na_2CO_3 + H_2O
+              \end{equation}
+       \end{block}
+       \column{0.59\textwidth}
+       \begin{block}{Получение извести}
+                \begin{equation}
+                Na_2CO_3 + Ca(OH)_2 = 2NaOH + CaCO_3\downarrow
+                \end{equation}
+                \begin{equation}
+                CaCO_3 = CaO + CO_2
+                \end{equation}
+                \begin{equation}
+                CaO + H_2O = Ca(OH)_2
+                \end{equation}
+        \end{block}
+\end{columns}
+\end{center}
+\end{frame}
+
+\begin{frame}[c]{Белый щелок}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{valkolip_koostumus}
+\end{frame}
+
+\begin{frame}[c]{Черный щелок}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{mustalip_koost}
+\end{frame}
+
+\begin{frame}[c]{Зеленый щелок}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{viherlipea_analyysi}
+\end{frame}
+
+\begin{frame}[c]{Котел переодической варки}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{erakeitin}
+\end{frame}
+
+\begin{frame}[c]{Завод переодической варки}
+\transdissolve[duration=0.2]
+\includegraphics[width=0.8\columnwidth]{SB_keittamo}
+\end{frame}
+
+
+\begin{frame}[c]{Процесс непрерывной варки}
+\transdissolve[duration=0.2]
+\begin{center}
+\begin{columns}
+       \column{0.74\textwidth}
+       \only<1>{
+       \begin{block}{Основными достоинствами процесса являются:}
+       \begin{itemize}
+       \item исключение из процесса технологических операций по загрузке и выгрузке варочных котлов;
+       	\item    сокращение производственных и складских площадей;
+        \item     меньший расход теплоносителей и их стабильное потребление во времени;
+        \item              сокращение расходов на теплорекуперацию;
+        \item              возможность полной автоматизации процессов
+       \end{itemize}
+       \end{block}
+       }
+      \pause
+      \only<2>{
+      \begin{alertblock}{Основными недостатками и особенностями процесса являются:}
+      \begin{itemize}
+       \item              метод может быть эффективно применим только для крупнотоннажного производства;
+        \item      более высокие требования к качеству исходного сырья, стабильности параметров пара и варочного раствора;
+        \item      более технологически сложная эксплуатация оборудования.
+      \end{itemize}
+      \end{alertblock}
+      }
+      
+        \column{0.25\textwidth}
+        \flushleft\includegraphics[width=0.99\columnwidth]{kamyr_valokuva}
+\end{columns}
+\end{center}
+\end{frame}
+
+
+\section{Выделение сырого сульфатного мыла}
+\subsection{Сырое сульфатное масло}
+\begin{frame}[c]{Сырое сульфатное мыло}
+\transdissolve[duration=0.2]
+\begin{block}{}
+Сырое сульфатное мыло представляет собой смесь, состоящую из приблизительно равных количеств натриевых солей смоляных и жирных кислот, и сравнительно меньшего количества окисленных и неомыляемых веществ. 
+\end{block}
+%\pause
+%\begin{alertblock}
+%content...
+%\end{alertblock}
+%\pause
+%\begin{problock}
+%content...
+%\end{problock}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Загрязнители сульфатного мыла}
+\transdissolve[duration=0.2] %переход к другому элементу ставится после названия слайда
+%These transitions are available.
+%\transblindshorizontal				Horizontal blinds pulled away
+%\transblindsvertical				Vertical blinds pulled away
+%\transboxin						Move to center from all sides			[duration=0.2]	
+%\transboxout						Move to all sides from center
+%\transdissolve						Slowly dissolve what was shown before
+%\transglitter			(off)		Glitter sweeps in specified direction 	[direction=<degree>]
+%\transslipverticalin	(off)		Sweeps two vertical lines in
+%\transslipverticalout				Sweeps two vertical lines out
+%\transhorizontalin					Sweeps two horizontal lines in
+%\transhorizontalout				Sweeps two horizontal lines out
+%\transwipe							Sweeps single line in specified direction
+%\transduration{2}					Show slide specified number of seconds
+\begin{block}{}
+В составе загрязнений находится значительное количество лигнина, минеральных и других веществ, содержащихся в черном щелоке, увлекаемом при отстаивании выделяющимся сульфатным мылом.
+
+\end{block}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Состав сырого сульфатного мыла}
+\transdissolve[duration=0.2]
+\begin{table}[h] %h - таблица где-то здесь, H - таблица здесь и баста
+\begin{center}
+\begin{tabular}{lc}
+\hline
+смоляные и жирные	 кислоты, \%&45 — 55\\
+неомыляемые вещества, \%&4 — 8 \\
+лигнин, красящие и другие вещества, \% &1 — 3\\
+натрий в соединениях, \%&4 — 8\\
+свободная щелочь, сульфат и карбонат, \% &1—3\\ 
+вода, \% &30—35\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}[c]{Теоретический выход мыла }
+\transdissolve[duration=0.2]
+\begin{itemize}			%обязательно окружение для создания колонок
+\item при смолистости сырья около 3~\%  приблизительно 120 — 130 кг/т целлюлозы
+\item при смолистости 4,5~\%— до 180 — 200 кг/т целлюлозы.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Технологические параметры, определяющие процесс выделения сульфатного мыла}
+\transdissolve[duration=0.2]
+\begin{itemize}
+\item плотность черного щелока
+\item  продолжительность его отстаивания
+\item  температура процесса
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Схема выделенния сульфатного мыла}
+\transdissolve[duration=0.2]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{shema}
+\end{center}
+\end{frame}
+
+\begin{frame}[c]{Способы интенсификации выделения сульфатного мыла}
+\begin{itemize}
+\item Добавка электролитов к черным щелокам \pause
+\item Методы флотации и аэрации \pause
+\item Использование добавок органических веществ\pause
+\item Использование солей первичных алифатических аминов \pause
+\item Применение электрофлокуляции \pause
+\item Окисление черных щелоков \pause
+\item Другие
+\end{itemize}
+\end{frame}
+
+\section{Литература}
+\begin{frame}[c]{Литература}
+\transdissolve[duration=0.2]
+\begin{center}
+Переработка сульфатного и сульфитного Щелоков: Учебник для вузов / Б. Д. Богомолов, С. А. Сапотницкий, О. М. Соколов и др.— М.: Лесная промышленность, 1989 - 360 с.
+\end{center}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,27 @@
+%----------Подписи----------------------------------------------
+\usepackage{calc} % для \widthof
+\newcommand{\podpis}[2]{%
+%	#1%
+%	\newlength{\myl}
+	\parbox{\widthof{#1}}{\center #1 \\[-0.002\textheight]\footnotesize%
+	(#2)%
+}}
+
+\newcommand{\podpisalt}[2]{%
+	%	#1%
+	%	\newlength{\myl}
+	\parbox{\widthof{#2}}{\center #1 \\[-0.002\textheight]\footnotesize%
+		(#2)%
+	}}
+
+\newcommand{\podpislong}[2]{%
+	#1 \hfill\hfill
+	\parbox{6em}{\center/\rule{6em}{0.1mm}/
+		\\[-0.002\textheight]\footnotesize
+		(подпись)}
+	\hfill
+	\parbox{\widthof{#2}}{\center/\underline{\smash{#2}}/
+		\\[-0.002\textheight]\footnotesize
+		(расшифровка)}
+	}
+

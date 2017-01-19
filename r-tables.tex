@@ -1,0 +1,21 @@
+% Для sweeve
+%наполнение таблицы
+<<echo=FALSE,results=tex>>=
+tbl <- xtable(data)
+print(tbl,
+    only.contents=TRUE,
+    include.rownames=FALSE,
+    type="latex",
+    digits(tbl) <- c(0,1,1,1,1,1),
+    file="output/tblout.tex")
+@
+
+\begin{tabular}{lddddd}
+	\toprule
+	& \multicolumn{2}{c}{Treatment} & \multicolumn{2}{c}{Control} & \\
+	\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+	Variable  &  \multicolumn{1}{r}{Mean}  &  \multicolumn{1}{r}{Std Dev}  &       \multicolumn{1}{r}{Mean}  &  \multicolumn{1}{r}{Std Dev}  &  \multicolumn{1}{r}{Difference}  \\
+	\midrule
+	\input{../output/tblout}
+	\bottomrule
+\end{tabular}

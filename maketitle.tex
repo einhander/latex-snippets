@@ -1,0 +1,16 @@
+% Definition of \maketitle
+\makeatletter
+\def\@maketitle{
+    %	\raggedright
+    \begin{flushright}
+        \includegraphics[width = 20mm]{forstuds}\\
+    \end{flushright}
+    \vspace{-6em}
+    \begin{center}
+        {\Large \@title }\par
+        {\large  Преподаватель: \@author}\par
+        Версия от: \@date\par
+
+        %		\includegraphics[width = 40mm]{image.png}
+\end{center}}
+\makeatother

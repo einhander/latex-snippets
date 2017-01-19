@@ -1,0 +1,70 @@
+%require chemfig extension
+%В преамболу
+\tikzstyle{subst} = [rounded rectangle,
+							thick,
+							inner sep=5pt,
+							minimum size=1cm,
+							draw=red!50!black!50,
+							top color=white,
+							bottom color=red!50!black!50,
+							font=\itshape,
+							drop shadow]
+\tikzstyle{process} = [ellipse,
+							thick,
+							minimum size=1cm,
+							draw=blue!50!black!50,
+							top color=white,
+							bottom color=blue!50!black!20,
+							drop shadow]
+							
+
+\begin{center}
+	\setarrowoffset{0mm}
+	%		\setcompoundstyle{
+	%			draw,
+	%			line width=1.8pt,
+	%			semitransparent, 
+	%			text opacity=1,
+	%			inner sep=5pt,
+	%			rounded corners=2mm
+	%			} %for schemes
+	\setarrowdefault{,0.4,red,line width=2pt} % arrows
+%	\arrow(n1.a1[s1]--n2.a2[s2]){arrow type}[angle,coeff,arrow style]  % arrow defenition
+	\vspace{-0.9em}
+	\scalebox{.59}{
+		\schemestart
+        %!!!!!!!!!!!!!!!!!БЕЗ ПУСТЫХ СТРОК!!!!!!!!!!!!!!!!!!
+		\parbox{7em}{\centering Растительная\\биомасса}
+		\arrow(sucr[subst]--)[,0.7] %здесь sucr метка для ветвления стрелок
+		Дробилка
+		\arrow(@sucr[process]--[subst])[,0.75]
+		\parbox{6em}{\centering Бункер \\готового\\сырья}
+		\arrow(--[process])[,0.7]
+		\parbox{6em}{\centering Ременный\\транспортер}
+		\arrow(--[process])[-90,0.7]
+		Вибросито
+		\arrow(--[process])[180,0.7]
+		\parbox{7em}{\centering Автоматический\\питатель}
+		\arrow(--[process])[180,0.7]
+		Сушилка
+		\arrow(--[process])[180,0.7]
+		Путевод
+		\arrow(--[subst])[-90,0.7]
+		\parbox{6em}{\centering Циклонный\\сепаратор}
+		\arrow(--[subst])[,0.7]
+		\parbox{5em}{\centering Бункер\\сырья}
+		\arrow(--[process])[,0.7]
+		\parbox{6em}{\centering Установка\\подачи}
+		\arrow(--[process])[,0.7]
+		\parbox{6em}{\centering Возв\-рат\-но-пос\-ту\-па\-тель\-ный\\лоток}
+		\arrow(--[process])[-90,0.7]
+		Экструдер
+		\arrow(--[process])[180,0.7]
+		\parbox{8em}{\centering Автоматический\\обрезатель}
+		\arrow(--[process])[180,0.7]
+		Упаковка
+		\arrow(--[subst])[180,0.7]
+		Хранение
+		\schemestop
+	}
+\end{center}

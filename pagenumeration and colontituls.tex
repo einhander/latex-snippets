@@ -1,0 +1,34 @@
+%=================нумерация страниц================================
+%============ четные-нечетные - ставить в свойствах documentclass - twoside!!!
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\small \bfseries\thepage}
+\fancypagestyle{mypagestyle}{% можно ставить mypagestyle
+	\fancyfoot[LE,RO]{\small \bfseries}
+\renewcommand{\headrulewidth}{0pt}
+}
+\renewcommand{\headrulewidth}{0pt} % убрать разделительную линию
+%\fancyfoot[LO,CE]{From: K. Grant} примеры
+%\fancyfoot[CO,RE]{To: Dean A. Smith}
+%==============Главы имеют свою нумерацию
+\makeatletter  %for chapter page style
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+	\thispagestyle{plain}% original style: plain ставить свою нумерацию mypagestyle
+	\global\@topnum\z@
+	\@afterindentfalse
+	\secdef\@chapter\@schapter}
+\makeatother
+
+\fancypagestyle{plain}{%%pagestyle definition
+	\fancyhead{} % clear all header fields
+	\fancyfoot[LE,RO]{\small \bfseries\thepage}
+	\renewcommand{\headrulewidth}{0.0pt}
+	%	\lhead{} %верхний колонтитул слева
+	%	\chead{}% там же по центру
+}
+
+\usepackage{tocloft}
+\tocloftpagestyle{plain}
+%================конец описания нумерации=================

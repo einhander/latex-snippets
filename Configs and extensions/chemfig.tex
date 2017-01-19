@@ -1,0 +1,43 @@
+
+%============Химия=========================================================================
+\usepackage{chemfig,mhchem} % рисование структурных формул в химии <<настоящий ад и вынос мозга>>
+\makeatletter %использование mhchem для строчных атомов в структурных формулах
+\def\CF@node@content{%
+	\expandafter\expandafter\expandafter
+	\printatom\expandafter\expandafter\expandafter
+	{\csname atom@\number\CF@cnt@atomnumber\endcsname}%
+	\ensuremath{\CF@node@strut}%
+}
+\makeatother
+%	\setcrambond{2pt}{}{} % для размера треугольных связей
+%	\setatomsep{2.2em} % для размера связей между атомами
+%	\setbondstyle{semithick}
+%\setarrowoffset{0.25em} %расстояние между стрелкой и атомом, полезно для диаграмм
+\setdoublesep{0.35700 em}  % 'Bond Spacing'
+%\setatomsep{0.78500 em}
+\setatomsep{1.78500 em}    % 'Fixed Length'
+\setbondoffset{0.18265 em} % 'Margin Width'
+\newcommand{\bondwidth}{0.06642 em} % 'Line Width'
+\setbondstyle{line width = \bondwidth}
+\renewcommand*{\printatom}[1]{{\sffamily\cf{#1}}}
+%============================Позволяет рисовать полимеры===========
+\newcommand\setpolymerdelim[2]{\def\delimleft{#1}\def\delimright{#2}}
+\def\makebraces[#1,#2]#3#4#5{%
+	\edef\delimhalfdim{\the\dimexpr(#1+#2)/2}%
+	\edef\delimvshift{\the\dimexpr(#1-#2)/2}%
+	\chemmove{%
+		\node[at=(#4),yshift=(\delimvshift)]
+		{$\left\delimleft\vrule height\delimhalfdim depth\delimhalfdim
+			width0pt\right.$};%
+		\node[at=(#5),yshift=(\delimvshift)]
+		{$\left.\vrule height\delimhalfdim depth\delimhalfdim
+			width0pt\right\delimright_{\rlap{$\scriptstyle#3$}}$};}}
+%=============Пример==================================
+%%\setpolymerdelim()% выбор типа скобок
+%%Polyéthylène:
+%%\chemfig{\vphantom{CH_2}%используется для поднятия связи на нормальное расстояние от базовой линии
+%%	-[@{op,.75}]CH_2-CH_2-[@{cl,0.25}]}
+%%\makebraces[5pt,5pt]{\!\!n=13}{op}{cl}
+%===============конец химии=======================
+
+%конец химии

@@ -1,0 +1,15 @@
+%===========Ссылка на текст==================================
+\makeatletter
+\let\oldhypertarget\hypertarget
+\renewcommand{\hypertarget}[2]{%
+	\oldhypertarget{#1}{#2}%
+	\protected@write\@mainaux{}{%
+		\string\expandafter\string\gdef
+		\string\csname\string\detokenize{#1}\string\endcsname{#2}%
+	}%
+}
+\newcommand{\myhyperlink}[1]{%
+	\hyperlink{#1}{\csname #1\endcsname}%
+}
+\makeatother
+%===========================================================

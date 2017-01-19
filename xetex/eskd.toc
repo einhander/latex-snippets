@@ -1,0 +1,16 @@
+\select@language {russian}
+\select@language {russian}
+\contentsline {section}{\numberline {1}Название проводимой работы}{3}
+\contentsline {section}{\numberline {2}Основание для проведения работы}{3}
+\contentsline {section}{\numberline {3}Срок исполнения}{3}
+\contentsline {section}{\numberline {4}Область применения результатов научных исследований}{3}
+\contentsline {section}{\numberline {5}Цель работы}{4}
+\contentsline {section}{\numberline {6}Краткое описание работы}{4}
+\contentsline {section}{\numberline {7}Основные параметры и технические требования}{4}
+\contentsline {subsection}{\numberline {7.1}Общие требования к работе}{4}
+\contentsline {subsection}{\numberline {7.2}Задачи, решаемые в ходе работы}{5}
+\contentsline {subsection}{\numberline {7.3}Требования к предоставлению результатов работы}{9}
+\contentsline {section}{\numberline {8}Потребность в результатах работы (планируемые направления применения разработки)}{9}
+\contentsline {section}{\numberline {9}Стадии и этапы разработки}{10}
+\contentsline {section}{\numberline {10}Требования по защите результатов работы}{10}
+\contentsline {section}{\numberline {11}Результаты работы}{10}

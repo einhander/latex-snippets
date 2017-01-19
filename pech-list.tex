@@ -1,0 +1,14 @@
+%=========================================================
+%================  Подсчет печатных листов  ==============
+%=========================================================
+newcount{\podp}\newcount{\podpfr}
+\podp=\c@page
+\podpfr=\c@page
+\divide\podp by 16
+\multiply\podp by 100
+\multiply\podpfr by 100
+\divide\podpfr by 16
+\advance\podpfr by -\podp
+\divide\podp by 100
+...
+Усл.печ.л.~{\the\podp.\ifnum\podpfr<10 0\fi\the\podpfr}

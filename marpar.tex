@@ -1,0 +1,10 @@
+\usepackage{tikz}
+
+\let\oldmarginpar\marginpar
+% renew the \marginpar command to draw 
+% a node; it has a default setting which 
+% can be overwritten
+\renewcommand{\marginpar}[2][rectangle,draw,fill=orange,text width= 2cm,rounded corners]{%
+        \oldmarginpar{%
+        \tikz \node at (0,0) [#1]{#2};}%
+        }

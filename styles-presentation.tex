@@ -1,0 +1,58 @@
+%создаем специальный блок другого цвета
+\newenvironment<>{problock}[1]{%
+	\begin{actionenv}#2%
+		\def\insertblocktitle{#1}%
+		\par%
+		\mode<presentation>{%
+			\setbeamercolor{block title}{fg=white,bg=orange!20!black}
+			\setbeamercolor{block body}{fg=black,bg=olive!50}
+			\setbeamercolor{itemize item}{fg=orange!20!black}
+			\setbeamertemplate{itemize item}[triangle]
+		}%
+		\usebeamertemplate{block begin}}
+	{\par\usebeamertemplate{block end}\end{actionenv}}
+
+
+%цвет блока для всего документа
+%\setbeamercolor{block title}{fg=orange!20!black,bg=green}%bg=background, fg= foreground
+%\setbeamercolor{block body}{bg=yellow,fg=green}%bg=background, fg= foreground
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\logo{\includegraphics[height=1cm]{lta}}
+
+\usetheme{Frankfurt} %тема
+%Хорошие темы: Frankfurt - в верху есть очень красивый прогерссбар 
+%\usetheme{Warsaw} %тема
+%\usecolortheme{wolverine} %цвет
+
+%\usecolortheme[overlystylish]{albatross}  %цвет внешних элементов темы
+%\usecolortheme{lily} %цвет внутренних элементов темы
+
+
+\setbeamercovered{transparent} %полупрозрачные оверлеиы
+
+
+
+
+%параметры ссылок и документа
+\hypersetup{colorlinks=true,
+	pdfpagemode={FullScreen},
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+	pdfauthor=Андрей Спицын,
+	pdfsubject=Пиролиз древесины, 
+	pdfkeywords={Пиролиз,Pyrolisys,adsorbtion}
+}
+
+%относится к первому слайду
+\title{Курсовой проект}
+\subtitle{Новые направления в химии и биотехнологии лесохимических продуктов}
+\author{Спицын Андрей Александрович}
+\institute{Санкт-Петербургский государственный лесотехнический университет}
+\date{\today}

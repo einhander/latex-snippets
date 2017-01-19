@@ -1,0 +1,33 @@
+%bigstrut and fix example in multurow
+
+
+\begin{table}[h] %h - таблица где-то здесь, H - таблица здесь и баста
+    \caption{Классификация активных углей в зависимости от микропористой структуры пор}
+    \small
+    \label{tabular:classification-ua}
+    \begin{center}
+        \begin{tabular}{cm{0.39\textwidth}cc}
+            \toprule
+            \multirow{2}{1cm}[-0.4cm]{Тип АУ}& %тонкая подгонка по высоте
+            \multirow{2}*[-0.3cm]{Микропористая структура}& %тонкая подгонка по высоте
+            \multicolumn{2}{c}{Значение констант}\\
+            \cmidrule{3-4}
+            &&
+            \multicolumn{1}{m{3cm}}{
+                $W_0$ или $W_{01}$, \unitfrac{см\textsuperscript{3}}{г}
+            }&
+                \multicolumn{1}{m{3.8cm}}{
+                $ B\cdot 10^6 $ или $ B_1\cdot 10^6 $ или $B_2 \cdot 10^6$}\\
+                \midrule
+                I&\multirow{4}*{Узкое распределение микропор}&\multirow{4}*{0,4-0,5}& 0,55\\
+                II&&& 0,55-0,7\\
+                III&&&0,7-0,9\\
+                IV&&&0,9\\
+                \midrule
+                V& \multirow{2}[8]{\linewidth}[0.1cm]{\parbox{\linewidth}{Широкое распределение микропор и развитая вторая микропористая структура}} %тонкая подгонка по высоте и увеличенная высота строки
+                 &			0,2--0,25&	0,8-1 и 4	\bigstrut\\
+                VI&&		2-0,3&		0,8-1 и 4  \bigstrut\\
+                \bottomrule
+            \end{tabular}
+        \end{center}
+    \end{table}

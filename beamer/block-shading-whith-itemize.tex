@@ -1,0 +1,48 @@
+%==============================================================================
+%==========================  Overlays  ========================================
+%==============================================================================
+%Whith itemize if needed
+\begin{itemize}
+	\item<+>[]
+		\begin{block}{header} 
+			text
+			 
+			dsaf
+			
+			asfd
+		\end{block}\vspace{-2em}
+\end{itemize}
+
+\uncover<1,2>{} %If itemize not needed. Best.
+
+%Another way 
+
+%Text only appears on speciﬁed slides. If no text is given, any text following the command will only appear on the speciﬁed slides.
+\onslide<1,2>{}
+
+%Text only appears on speciﬁed slides. When the text is hidden, it will occupy NO SPACE.
+\only<1,2>{}
+
+%Text appears on speciﬁed slides and is COMPLATELY transparent, but still occupies space.
+\visible<1,2> 
+
+%The opposite of visible
+\invisible<1,2> 
+
+
+%Other things
+%Takes two arguments: one for the default text and a second for the alternate text. The default text shows up on the speciﬁed slides. The alternate text shows up on all unspeciﬁed slides.
+\alt<1,2>
+
+%Takes three arguments: one for the text that
+%will appear if the current slide comes before
+%the speciﬁed slides, a second for the text that
+%appears while currently on the speciﬁed slides,
+%and a third for the text that appears after the
+%speciﬁed slides have appeared.
+\temporal<1,2> 
+
+%The text will only be ”uncovered” on the
+%speciﬁed slides. On other slides, the text will
+%still be typeset and will appear transparent.
+\uncover<1,2>{}

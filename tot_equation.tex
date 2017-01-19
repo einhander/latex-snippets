@@ -1,0 +1,16 @@
+\documentclass[11pt]{article}
+\usepackage{totcount, mathtools}
+\newtotcounter{eqnnum}
+\newcommand*{\eqn}[2]{%
+    \stepcounter{eqnnum}%
+    \stepcounter{equation}%
+    \begin{equation}\label{#2}%
+        #1\tag{\arabic{equation}/\protect\total{eqnnum}}%
+    \end{equation}%
+}
+\begin{document}
+\eqn{f_1(x)=a_1x^2+b_1x+c_1}{eqn:first}
+\eqn{f_2(x)=a_2x^2+b_2x+c_2}{eqn:second}
+See equation (\ref{eqn:first}) and (\ref{eqn:second}).
+\tiny\hfill Created by http://texblog.org
+\end{document}

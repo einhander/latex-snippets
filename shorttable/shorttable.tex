@@ -1,0 +1,25 @@
+\begin{table}[h] %h - таблица где-то здесь, H - таблица здесь и баста
+\caption{
+Химический состав золы АУ, массовые доли,%
+}
+\label{tabular:him-sostav-zoli}
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+\bigstrut\multirow{2}*{Марка АУ}&\multicolumn{3}{c}{Массовая доля золы в активном угле,\%}&\multirow{2}{*}{\parbox{3cm}{Массовая доля $Fe^{+3}$ в активном угле,\%}}\\
+\cline{2-4}
+\bigstrut&общая&водорастворимая&кислоторастворимая&\\
+
+\hline
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%Centering vertical lines in multicolumn
+
+\begin{tabular}{>{\centering}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}} %bad not always work
+%better more reliable
+\begin{tabular}{c}
+\multicolumn{1}{m{1cm}}{Массовая }\\
+\end{tabular}
